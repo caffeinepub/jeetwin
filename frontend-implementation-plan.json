@@ -1,0 +1,253 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "JeetWin Pro Website Redesign with Casino Theme and Hero Banners",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create full-page layout with navigation, hero section, game categories, promotional banners, featured games grid, and footer",
+      "acceptanceCriteria": [
+        "Navigation bar is present with logo, login and register CTAs",
+        "Page sections match the general layout of jeet-win.live",
+        "Footer includes relevant links and legal disclaimer text"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update App component to render the main page layout structure including Navigation, Hero, Categories, Games, Promotions, and Footer sections"
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create Navigation component with logo, center nav links, and Login/Register buttons on the right"
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create Hero section component container for the carousel slider"
+        },
+        {
+          "path": "frontend/src/components/Categories.tsx",
+          "operation": "create",
+          "description": "Create Categories section component container for the games/sports category tabs"
+        },
+        {
+          "path": "frontend/src/components/FeaturedGames.tsx",
+          "operation": "create",
+          "description": "Create FeaturedGames section component to display the game cards grid"
+        },
+        {
+          "path": "frontend/src/components/Promotions.tsx",
+          "operation": "create",
+          "description": "Create Promotions section component to display promotional offer cards"
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create Footer component with Quick Links, Games, Support columns, social media icons, and legal disclaimer"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply premium casino theme with gold, deep black, and crimson red color palette with glowing accents and bold typography",
+      "acceptanceCriteria": [
+        "Primary colors are gold (#FFD700), deep black (#0A0A0A), and crimson red (#C0132F)",
+        "Typography is bold and high-contrast throughout",
+        "Glowing neon-style accents are applied to buttons, cards, and section headings",
+        "Theme is consistent across navigation, hero, cards, and footer"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom colors: gold (#FFD700), deepBlack (#0A0A0A), crimsonRed (#C0132F), and configure box-shadow utilities for glowing effects"
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global CSS for premium casino aesthetics including bold font weights, glowing text shadows, neon button effects, and dark background gradients using the gold/black/red palette"
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build full-width auto-playing hero carousel with 5 banner slides featuring headline, subheadline, CTA button, navigation arrows, and dot indicators",
+      "acceptanceCriteria": [
+        "Hero section spans full viewport width",
+        "Auto-plays through at least 5 banner images",
+        "Each slide has headline, subheadline, and CTA button",
+        "Navigation arrows and dot indicators are visible and functional",
+        "Transitions are smooth (fade or slide animation)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeroCarousel.tsx",
+          "operation": "create",
+          "description": "Create HeroCarousel component with auto-play, 5 slides using generated banner images (frontend/public/assets/generated/hero-banner-1.dim_1920x700.jpg through hero-banner-5.dim_1920x700.jpg), navigation arrows, dot indicators, and smooth transitions. Each slide includes headline, subheadline, and CTA button overlay"
+        },
+        {
+          "path": "frontend/src/hooks/useCarousel.ts",
+          "operation": "create",
+          "description": "Create useCarousel hook to manage carousel state, auto-play timer, navigation handlers, and slide transitions"
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Update Hero section to render HeroCarousel component"
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Display horizontal scrollable category tab bar with icons and labels for Cricket, Football, Casino, Slots, Live Casino, Card Games, Lottery that filters game cards",
+      "acceptanceCriteria": [
+        "Category tabs are horizontally scrollable on smaller screens",
+        "Each tab has an icon and label",
+        "Active tab is visually highlighted in gold",
+        "Selecting a tab filters the game grid accordingly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CategoryTabs.tsx",
+          "operation": "create",
+          "description": "Create CategoryTabs component with horizontal scrollable tab bar displaying Cricket, Football, Casino, Slots, Live Casino, Card Games, Lottery categories with icons and labels. Active tab highlighted in gold. Clicking a tab updates selected category state"
+        },
+        {
+          "path": "frontend/src/components/Categories.tsx",
+          "operation": "modify",
+          "description": "Update Categories section to render CategoryTabs component and manage selected category state, passing it to FeaturedGames for filtering"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire category selection state between Categories and FeaturedGames sections to enable filtering"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create featured games grid with responsive cards showing game banner image, title, and Play Now button using AI-generated thumbnails",
+      "acceptanceCriteria": [
+        "Game cards are displayed in a responsive grid (2 cols mobile, 4 cols desktop)",
+        "Each card has a banner image, title, and 'Play Now' CTA",
+        "Cards have hover effects (scale + glow)",
+        "AI-generated images are used as card thumbnails"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameCard.tsx",
+          "operation": "create",
+          "description": "Create GameCard component displaying game thumbnail image, title, and Play Now button with hover scale and glow effects using the gold/red theme"
+        },
+        {
+          "path": "frontend/src/components/FeaturedGames.tsx",
+          "operation": "modify",
+          "description": "Update FeaturedGames section to render responsive grid (2 cols mobile, 4 cols desktop) of GameCard components using generated game images from frontend/public/assets/generated/ (game-slots.dim_400x300.jpg, game-poker.dim_400x300.jpg, game-cricket.dim_400x300.jpg, game-football.dim_400x300.jpg, game-baccarat.dim_400x300.jpg, game-lottery.dim_400x300.jpg). Filter cards based on selected category from Categories section"
+        },
+        {
+          "path": "frontend/src/data/games.ts",
+          "operation": "create",
+          "description": "Create games data file containing array of game objects with id, title, category, and image path properties for all 6 game types"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add promotional offers section with 3 offer cards showing banner image, title, description, and Claim Now button",
+      "acceptanceCriteria": [
+        "At least 3 promotional offer cards are displayed",
+        "Each card has an image, title, description, and CTA button",
+        "Cards use the gold/red/black theme with glowing borders"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PromoCard.tsx",
+          "operation": "create",
+          "description": "Create PromoCard component displaying promotional banner image, offer title, description text, and Claim Now button with glowing gold borders and hover effects"
+        },
+        {
+          "path": "frontend/src/components/Promotions.tsx",
+          "operation": "modify",
+          "description": "Update Promotions section to render 3 PromoCard components using generated promotional images from frontend/public/assets/generated/ (promo-welcome.dim_600x300.jpg for Welcome Bonus 200%, promo-refer.dim_600x300.jpg for Refer a Friend, promo-cashback.dim_600x300.jpg for Daily Cashback)"
+        },
+        {
+          "path": "frontend/src/data/promotions.ts",
+          "operation": "create",
+          "description": "Create promotions data file containing array of 3 promotional offers with id, title, description, and image path properties"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Render all AI-generated images as static assets from frontend/public/assets/generated in hero slider, game cards, and promotional banners",
+      "acceptanceCriteria": [
+        "All image <img> tags reference paths under /assets/generated/",
+        "Images load correctly in all sections",
+        "No broken image links"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeroCarousel.tsx",
+          "operation": "modify",
+          "description": "Verify all hero banner image src attributes reference the exact generated file paths: /assets/generated/hero-banner-1.dim_1920x700.jpg, /assets/generated/hero-banner-2.dim_1920x700.jpg, /assets/generated/hero-banner-3.dim_1920x700.jpg, /assets/generated/hero-banner-4.dim_1920x700.jpg, /assets/generated/hero-banner-5.dim_1920x700.jpg"
+        },
+        {
+          "path": "frontend/src/data/games.ts",
+          "operation": "modify",
+          "description": "Verify all game image paths reference the exact generated file paths: /assets/generated/game-slots.dim_400x300.jpg, /assets/generated/game-poker.dim_400x300.jpg, /assets/generated/game-cricket.dim_400x300.jpg, /assets/generated/game-football.dim_400x300.jpg, /assets/generated/game-baccarat.dim_400x300.jpg, /assets/generated/game-lottery.dim_400x300.jpg"
+        },
+        {
+          "path": "frontend/src/data/promotions.ts",
+          "operation": "modify",
+          "description": "Verify all promotional image paths reference the exact generated file paths: /assets/generated/promo-welcome.dim_600x300.jpg, /assets/generated/promo-refer.dim_600x300.jpg, /assets/generated/promo-cashback.dim_600x300.jpg"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Implement sticky top navigation with logo, center nav links, Login/Register buttons, and mobile hamburger menu",
+      "acceptanceCriteria": [
+        "Navigation is sticky and visible on scroll",
+        "Logo is on the left",
+        "Login and Register buttons are on the right with distinct styling",
+        "Mobile hamburger menu toggles the nav links"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Update Navigation component to be sticky (fixed position), display JeetWin Pro logo on left, center navigation links (Home, Sports, Casino, Promotions, About), Login and Register buttons on right with gold/crimson styling, and hamburger menu for mobile that toggles nav links visibility"
+        },
+        {
+          "path": "frontend/src/hooks/useMobileMenu.ts",
+          "operation": "create",
+          "description": "Create useMobileMenu hook to manage mobile menu open/close state and toggle handler"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Create footer with Quick Links, Games, Support columns, social media icons, and legal disclaimer using dark background with gold accent text",
+      "acceptanceCriteria": [
+        "Footer has at least 3 link columns",
+        "Social media icons are displayed",
+        "Legal disclaimer text is present",
+        "Footer uses the dark/gold theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Update Footer component to display 3 columns (Quick Links, Games, Support with Contact Us/FAQ/Responsible Gaming), social media icons row, and legal disclaimer text. Use dark background (#0A0A0A) with gold (#FFD700) accent text and links"
+        },
+        {
+          "path": "frontend/src/data/footer.ts",
+          "operation": "create",
+          "description": "Create footer data file containing link arrays for Quick Links, Games, and Support sections plus social media icon configurations"
+        }
+      ]
+    }
+  ]
+}

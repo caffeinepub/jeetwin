@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Recreate the JeetWin website (https://jeet-win.live/) with improved design, attractive color theme, hero section with multiple image banners, and AI-generated images throughout.",
+  "architectural_notes": [
+    "Reference site: https://jeet-win.live/ — clone content/structure with redesigned visuals",
+    "Use AI-generated images (Google Nano Banana Pro style) for hero banners and site visuals"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Epic casino hero banner with glowing gold coins, playing cards, dice and luxury dark background atmosphere (hero-banner-1.dim_1920x700.jpg)\n- Cricket betting hero banner with cricket stadium lights, golden trophy and dramatic dark sky background (hero-banner-2.dim_1920x700.jpg)\n- Live casino roulette hero banner with spinning roulette wheel, elegant red and gold color scheme on dark background (hero-banner-3.dim_1920x700.jpg)\n- Football sports betting hero banner with stadium crowd, ball and golden score display on dark cinematic background (hero-banner-4.dim_1920x700.jpg)\n- Welcome bonus promotion hero banner with gift boxes, confetti, gold coins exploding on dark luxury background (hero-banner-5.dim_1920x700.jpg)\n- Slot machine game card thumbnail with glowing reels, jackpot symbols, gold and red neon glow on black background (game-slots.dim_400x300.jpg)\n- Live poker table game card thumbnail with cards, chips, dramatic lighting in dark luxury casino setting (game-poker.dim_400x300.jpg)\n- Cricket sports betting card thumbnail with batsman silhouette, stadium lights and golden overlay on dark background (game-cricket.dim_400x300.jpg)\n- Football betting card thumbnail with football and stadium in dramatic cinematic lighting with gold accents (game-football.dim_400x300.jpg)\n- Baccarat card game thumbnail with cards and chips arranged on a premium dark green felt table with gold trim (game-baccarat.dim_400x300.jpg)\n- Lottery game card thumbnail with glowing lottery balls, numbers and golden sparkles on dark background (game-lottery.dim_400x300.jpg)\n- Welcome bonus promotional card banner with 200% bonus text, gold coins and luxurious dark red and gold gradient (promo-welcome.dim_600x300.jpg)\n- Refer a friend promotional card banner with two silhouettes, handshake icon, gold coins and dark background with red accents (promo-refer.dim_600x300.jpg)\n- Daily cashback promotional card banner with gold cashback arrow icon, percentage symbol and dark luxury background (promo-cashback.dim_600x300.jpg)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-full-page-layout-that-mirrors-the-structure-of-https-jeet-win-live-including-top-navigation-bar-with-logo-and-login-register-buttons-hero-section-games-sports-categories-section-promotional-banners-section-featured-games-grid-footer-with-links-and-legal-info",
+      "title": "Create a full-page layout that mirrors the structure of https://jeet-win.live/, including: top navigation bar with logo and login/register buttons, hero section, games/sports categories section, promotional banners section, featured games grid, footer with links and legal info.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-an-attractive-redesigned-visual-theme-using-a-rich-gold-deep-black-and-crimson-red-color-palette-with-bold-typography-glowing-accents-and-premium-casino-style-aesthetics-enforce-this-theme-consistently-across-all-sections",
+      "title": "Apply an attractive redesigned visual theme using a rich gold, deep black, and crimson red color palette with bold typography, glowing accents, and premium casino-style aesthetics. Enforce this theme consistently across all sections.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-full-width-hero-section-at-the-top-of-the-page-featuring-an-auto-playing-image-carousel-slider-with-at-least-5-banner-slides-each-slide-should-display-a-promotional-banner-image-a-headline-a-subheadline-and-a-cta-button-include-previous-next-navigation-arrows-and-dot-indicators",
+      "title": "Build a full-width hero section at the top of the page featuring an auto-playing image carousel/slider with at least 5 banner slides. Each slide should display a promotional banner image, a headline, a subheadline, and a CTA button. Include previous/next navigation arrows and dot indicators.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-a-horizontal-scrollable-sports-and-games-category-tab-bar-below-the-hero-section-with-icons-and-labels-for-categories-such-as-cricket-football-casino-slots-live-casino-card-games-lottery-clicking-a-tab-filters-the-visible-game-sport-cards-below",
+      "title": "Display a horizontal scrollable sports and games category tab bar below the hero section with icons and labels for categories such as: Cricket, Football, Casino, Slots, Live Casino, Card Games, Lottery. Clicking a tab filters the visible game/sport cards below.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-featured-games-sports-grid-section-displaying-game-cards-each-card-should-show-a-game-banner-image-game-title-and-a-play-now-button-use-the-ai-generated-images-as-card-thumbnails",
+      "title": "Create a featured games/sports grid section displaying game cards. Each card should show a game banner image, game title, and a 'Play Now' button. Use the AI-generated images as card thumbnails.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-promotional-offers-bonuses-section-with-at-least-3-offer-cards-each-card-should-show-a-banner-image-offer-title-e-g-welcome-bonus-200-refer-a-friend-daily-cashback-a-short-description-and-a-claim-now-button",
+      "title": "Add a promotional offers/bonuses section with at least 3 offer cards. Each card should show a banner image, offer title (e.g., 'Welcome Bonus 200%', 'Refer a Friend', 'Daily Cashback'), a short description, and a 'Claim Now' button.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-all-ai-generated-images-as-static-assets-from-frontend-public-assets-generated-and-reference-them-in-the-hero-slider-game-cards-and-promotional-banners",
+      "title": "Render all AI-generated images as static assets from frontend/public/assets/generated and reference them in the hero slider, game cards, and promotional banners.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-sticky-top-navigation-bar-with-the-jeetwin-pro-logo-on-the-left-navigation-links-home-sports-casino-promotions-about-in-the-center-and-login-register-buttons-on-the-right-on-mobile-collapse-nav-links-into-a-hamburger-menu",
+      "title": "Implement a sticky top navigation bar with the JeetWin Pro logo on the left, navigation links (Home, Sports, Casino, Promotions, About) in the center, and Login / Register buttons on the right. On mobile, collapse nav links into a hamburger menu.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-footer-section-with-columns-for-quick-links-games-support-contact-us-faq-responsible-gaming-social-media-icons-and-a-legal-disclaimer-text-use-dark-background-with-gold-accent-text",
+      "title": "Create a footer section with columns for: Quick Links, Games, Support (Contact Us, FAQ, Responsible Gaming), social media icons, and a legal disclaimer text. Use dark background with gold accent text.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Copy and redesign JeetWin website with attractive color theme and improved UI",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Hero section with multiple image banners",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Generate and integrate AI images throughout the website",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "JeetWin",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

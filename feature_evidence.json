@@ -1,0 +1,182 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-full-page-layout-that-mirrors-the-structure-of-https-jeet-win-live-including-top-navigation-bar-with-logo-and-login-register-buttons-hero-section-games-sports-categories-section-promotional-banners-section-featured-games-grid-footer-with-links-and-legal-info",
+      "featureTitle": "Create a full-page layout that mirrors the structure of https://jeet-win.live/, including: top navigation bar with logo and login/register buttons, hero section, games/sports categories section, promotional banners section, featured games grid, footer with links and legal info.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/FeaturedGames.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/components/Promotions.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-an-attractive-redesigned-visual-theme-using-a-rich-gold-deep-black-and-crimson-red-color-palette-with-bold-typography-glowing-accents-and-premium-casino-style-aesthetics-enforce-this-theme-consistently-across-all-sections",
+      "featureTitle": "Apply an attractive redesigned visual theme using a rich gold, deep black, and crimson red color palette with bold typography, glowing accents, and premium casino-style aesthetics. Enforce this theme consistently across all sections.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-full-width-hero-section-at-the-top-of-the-page-featuring-an-auto-playing-image-carousel-slider-with-at-least-5-banner-slides-each-slide-should-display-a-promotional-banner-image-a-headline-a-subheadline-and-a-cta-button-include-previous-next-navigation-arrows-and-dot-indicators",
+      "featureTitle": "Build a full-width hero section at the top of the page featuring an auto-playing image carousel/slider with at least 5 banner slides. Each slide should display a promotional banner image, a headline, a subheadline, and a CTA button. Include previous/next navigation arrows and dot indicators.",
+      "files": [
+        "frontend/src/components/HeroCarousel.tsx",
+        "frontend/src/hooks/useCarousel.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-a-horizontal-scrollable-sports-and-games-category-tab-bar-below-the-hero-section-with-icons-and-labels-for-categories-such-as-cricket-football-casino-slots-live-casino-card-games-lottery-clicking-a-tab-filters-the-visible-game-sport-cards-below",
+      "featureTitle": "Display a horizontal scrollable sports and games category tab bar below the hero section with icons and labels for categories such as: Cricket, Football, Casino, Slots, Live Casino, Card Games, Lottery. Clicking a tab filters the visible game/sport cards below.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CategoryTabs.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-featured-games-sports-grid-section-displaying-game-cards-each-card-should-show-a-game-banner-image-game-title-and-a-play-now-button-use-the-ai-generated-images-as-card-thumbnails",
+      "featureTitle": "Create a featured games/sports grid section displaying game cards. Each card should show a game banner image, game title, and a 'Play Now' button. Use the AI-generated images as card thumbnails.",
+      "files": [
+        "frontend/src/components/FeaturedGames.tsx",
+        "frontend/src/components/GameCard.tsx",
+        "frontend/src/data/games.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-promotional-offers-bonuses-section-with-at-least-3-offer-cards-each-card-should-show-a-banner-image-offer-title-e-g-welcome-bonus-200-refer-a-friend-daily-cashback-a-short-description-and-a-claim-now-button",
+      "featureTitle": "Add a promotional offers/bonuses section with at least 3 offer cards. Each card should show a banner image, offer title (e.g., 'Welcome Bonus 200%', 'Refer a Friend', 'Daily Cashback'), a short description, and a 'Claim Now' button.",
+      "files": [
+        "frontend/src/components/PromoCard.tsx",
+        "frontend/src/components/Promotions.tsx",
+        "frontend/src/data/promotions.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-all-ai-generated-images-as-static-assets-from-frontend-public-assets-generated-and-reference-them-in-the-hero-slider-game-cards-and-promotional-banners",
+      "featureTitle": "Render all AI-generated images as static assets from frontend/public/assets/generated and reference them in the hero slider, game cards, and promotional banners.",
+      "files": [
+        "frontend/src/components/HeroCarousel.tsx",
+        "frontend/src/data/games.ts",
+        "frontend/src/data/promotions.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-sticky-top-navigation-bar-with-the-jeetwin-pro-logo-on-the-left-navigation-links-home-sports-casino-promotions-about-in-the-center-and-login-register-buttons-on-the-right-on-mobile-collapse-nav-links-into-a-hamburger-menu",
+      "featureTitle": "Implement a sticky top navigation bar with the JeetWin Pro logo on the left, navigation links (Home, Sports, Casino, Promotions, About) in the center, and Login / Register buttons on the right. On mobile, collapse nav links into a hamburger menu.",
+      "files": [
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/hooks/useMobileMenu.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-footer-section-with-columns-for-quick-links-games-support-contact-us-faq-responsible-gaming-social-media-icons-and-a-legal-disclaimer-text-use-dark-background-with-gold-accent-text",
+      "featureTitle": "Create a footer section with columns for: Quick Links, Games, Support (Contact Us, FAQ, Responsible Gaming), social media icons, and a legal disclaimer text. Use dark background with gold accent text.",
+      "files": [
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/data/footer.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

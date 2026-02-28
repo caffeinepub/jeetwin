@@ -1,0 +1,21 @@
+{
+  "frontend/src/index.css": "Global CSS with premium casino design system — OKLCH color tokens for dark/gold/crimson theme, custom fonts (Oswald, Rajdhani, Inter), glowing button/card effects, ticker animation, and utility classes for the casino aesthetic.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom gold, crimson, and dark color palettes, Oswald/Rajdhani/Inter font families, and custom box-shadow utilities for glowing effects.",
+  "frontend/src/data/games.ts": "Static data file defining the Game interface and array of 6 games (slots, poker, cricket, football, baccarat, lottery) with categories, image paths, and badge metadata.",
+  "frontend/src/data/promotions.ts": "Static data file defining the Promotion interface and 3 promotional offers (Welcome Bonus, Refer a Friend, Daily Cashback) with image paths and descriptions.",
+  "frontend/src/data/footer.ts": "Static data arrays for footer link columns (Quick Links, Games, Support) and payment method labels.",
+  "frontend/src/hooks/useCarousel.ts": "Custom hook managing carousel state with auto-play timer, slide transitions, and navigation handlers (next, prev, dot click).",
+  "frontend/src/hooks/useMobileMenu.ts": "Custom hook managing mobile menu open/close state with body scroll lock side effect.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query backend hooks (no backend queries needed for this static frontend).",
+  "frontend/src/components/Navigation.tsx": "Sticky top navigation with JeetWin Pro logo, desktop nav links with active underline animation, Login/Register CTAs, live ticker bar, and mobile hamburger menu with overlay.",
+  "frontend/src/components/HeroCarousel.tsx": "Full-viewport auto-playing hero carousel with 5 slides, each featuring a banner image, badge, headline, subheadline, and dual CTA buttons, plus arrow navigation and dot indicators.",
+  "frontend/src/components/StatsBar.tsx": "Horizontal stats bar displaying 4 key metrics (active players, winnings paid, support availability, security) with gold icons.",
+  "frontend/src/components/CategoryTabs.tsx": "Horizontally scrollable category tab bar with emoji icons and labels, highlighting the active tab in gold with a bottom border indicator.",
+  "frontend/src/components/GameCard.tsx": "Individual game card with image, hover play overlay, badge labels (LIVE/JACKPOT/VIP/NEW/HOT), star rating, and Play Now button.",
+  "frontend/src/components/FeaturedGames.tsx": "Games section combining CategoryTabs for filtering and a responsive grid (2–6 columns) of GameCard components.",
+  "frontend/src/components/PromoCard.tsx": "Promotional offer card with banner image, highlight badge, title, description, and crimson CTA button with hover effects.",
+  "frontend/src/components/Promotions.tsx": "Promotions section rendering 3 PromoCard components in a responsive grid with section header and terms note.",
+  "frontend/src/components/WhyChooseUs.tsx": "Feature highlights section with 6 cards showcasing platform benefits (security, withdrawals, support, payments, odds, fair play).",
+  "frontend/src/components/Footer.tsx": "Full footer with brand column, 3 link columns, social media icons, payment method badges, legal disclaimer, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/App.tsx": "Root application component composing Navigation, HeroCarousel, StatsBar, FeaturedGames, Promotions, WhyChooseUs, and Footer in a dark-themed layout."
+}
