@@ -1,8 +1,12 @@
 import { Gift, ChevronRight } from 'lucide-react';
 import PromoCard from './PromoCard';
 import { promotions } from '../data/promotions';
+import { openWhatsApp } from '../constants/whatsapp';
+import { useViewportAnimation } from '../hooks/useViewportAnimation';
 
 export default function Promotions() {
+  const { ref, isVisible } = useViewportAnimation();
+
   return (
     <section id="promotions" className="bg-gradient-to-b from-dark-500 to-dark-600 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -18,15 +22,27 @@ export default function Promotions() {
             </h2>
             <div className="divider-gold w-32 mt-2" />
           </div>
-          <button className="hidden sm:flex items-center gap-1 text-gold-400 text-sm font-display font-semibold tracking-wider uppercase hover:text-gold-300 transition-colors">
+          <button
+            onClick={openWhatsApp}
+            className="hidden sm:flex items-center gap-1 text-gold-400 text-sm font-display font-semibold tracking-wider uppercase hover:text-gold-300 hover:scale-105 transition-all"
+          >
             All Offers <ChevronRight className="w-4 h-4" />
           </button>
         </div>
 
         {/* Promo Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {promotions.map((promo) => (
-            <PromoCard key={promo.id} promo={promo} />
+        <div
+          ref={ref as React.RefObject<HTMLDivElement>}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {promotions.map((promo, index) => (
+            <div
+              key={promo.id}
+              className={`card-enter ${isVisible ? 'visible' : ''}`}
+              style={{ transitionDelay: `${index * 0.12}s` }}
+            >
+              <PromoCard promo={promo} />
+            </div>
           ))}
         </div>
 

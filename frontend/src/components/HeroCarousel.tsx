@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { useCarousel } from '../hooks/useCarousel';
+import { openWhatsApp } from '../constants/whatsapp';
 
 interface HeroSlide {
   id: number;
@@ -66,7 +67,7 @@ const slides: HeroSlide[] = [
 ];
 
 export default function HeroCarousel() {
-  const { currentSlide, isTransitioning, handleNext, handlePrev, handleDotClick } = useCarousel({
+  const { currentSlide, handleNext, handlePrev, handleDotClick } = useCarousel({
     totalSlides: slides.length,
     autoPlayInterval: 5500,
   });
@@ -110,27 +111,37 @@ export default function HeroCarousel() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
-              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
+            <h1
+              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
+              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}
+            >
               <span className="gold-gradient-text">{slide.headline.split(' ').slice(0, 2).join(' ')}</span>
               <br />
               <span className="text-white">{slide.headline.split(' ').slice(2).join(' ')}</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base sm:text-lg text-white/80 font-body mb-8 max-w-lg leading-relaxed"
-              style={{ textShadow: '0 1px 10px rgba(0,0,0,0.8)' }}>
+            <p
+              className="text-base sm:text-lg text-white/80 font-body mb-8 max-w-lg leading-relaxed"
+              style={{ textShadow: '0 1px 10px rgba(0,0,0,0.8)' }}
+            >
               {slide.subheadline}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="btn-gold px-8 py-3.5 rounded-lg text-base flex items-center gap-2">
+              <button
+                onClick={openWhatsApp}
+                className="btn-gold px-8 py-3.5 rounded-lg text-base flex items-center gap-2"
+              >
                 <Play className="w-4 h-4 fill-current" />
                 {slide.ctaText}
               </button>
               {slide.ctaSecondary && (
-                <button className="px-8 py-3.5 rounded-lg text-base font-display font-bold tracking-wider uppercase text-white border border-white/30 hover:border-gold-400/60 hover:text-gold-400 backdrop-blur-sm transition-all duration-200">
+                <button
+                  onClick={openWhatsApp}
+                  className="px-8 py-3.5 rounded-lg text-base font-display font-bold tracking-wider uppercase text-white border border-white/30 hover:border-gold-400/60 hover:text-gold-400 backdrop-blur-sm transition-all duration-200 hover:scale-105"
+                >
                   {slide.ctaSecondary}
                 </button>
               )}

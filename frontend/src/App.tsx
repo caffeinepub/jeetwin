@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import HeroCarousel from './components/HeroCarousel';
 import Navigation from './components/Navigation';
 import StatsBar from './components/StatsBar';
@@ -5,6 +6,19 @@ import FeaturedGames from './components/FeaturedGames';
 import Promotions from './components/Promotions';
 import WhyChooseUs from './components/WhyChooseUs';
 import Footer from './components/Footer';
+import { useViewportAnimation } from './hooks/useViewportAnimation';
+
+function AnimatedSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const { ref, isVisible } = useViewportAnimation();
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className={`section-enter ${isVisible ? 'visible' : ''} ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function App() {
   return (
@@ -14,26 +28,36 @@ export default function App() {
 
       {/* Main Content */}
       <main>
-        {/* Hero Carousel - full viewport */}
+        {/* Hero Carousel - full viewport, no entrance animation needed */}
         <div className="pt-0">
           <HeroCarousel />
         </div>
 
         {/* Stats Bar */}
-        <StatsBar />
+        <AnimatedSection>
+          <StatsBar />
+        </AnimatedSection>
 
         {/* Featured Games with Category Tabs */}
-        <FeaturedGames />
+        <AnimatedSection>
+          <FeaturedGames />
+        </AnimatedSection>
 
         {/* Promotions Section */}
-        <Promotions />
+        <AnimatedSection>
+          <Promotions />
+        </AnimatedSection>
 
         {/* Why Choose Us */}
-        <WhyChooseUs />
+        <AnimatedSection>
+          <WhyChooseUs />
+        </AnimatedSection>
       </main>
 
       {/* Footer */}
-      <Footer />
+      <AnimatedSection>
+        <Footer />
+      </AnimatedSection>
     </div>
   );
 }

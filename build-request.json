@@ -1,209 +1,69 @@
 {
   "kind": "build_request",
-  "title": "JeetWin Website Redesign with Attractive Theme and Hero Banners",
+  "title": "Add animations and WhatsApp redirect on all interactive elements",
   "projectName": "JeetWin Pro",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a full-page layout that mirrors the structure of https://jeet-win.live/, including: top navigation bar with logo and login/register buttons, hero section, games/sports categories section, promotional banners section, featured games grid, footer with links and legal info.",
+      "id": "REQ-12",
+      "text": "Add entrance animations and micro-interactions throughout the entire website. This includes: fade-in/slide-up animations for sections as they enter the viewport (hero, stats bar, featured games, promotions, why choose us, footer), staggered card reveal animations for game cards and promo cards, hover scale/glow animations on all interactive cards and buttons, smooth transitions on the navigation bar, and animated text overlays in the hero carousel slides. Use CSS keyframes and/or Tailwind animation utilities consistently across all components.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-6"
         ],
         "quotes": [
-          "Copy the contents of the website"
+          "add some animations",
+          "Update the whole website accordingly"
         ]
       },
       "acceptanceCriteria": [
-        "Navigation bar is present with logo, login and register CTAs",
-        "Page sections match the general layout of jeet-win.live",
-        "Footer includes relevant links and legal disclaimer text"
+        "Sections fade-in and slide-up as they enter the viewport",
+        "Game cards and promo cards have staggered reveal animations on load",
+        "All interactive cards and buttons have hover scale and glow effects",
+        "Navigation bar has smooth scroll and transition effects",
+        "Hero carousel slides have animated text overlays"
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Apply an attractive redesigned visual theme using a rich gold, deep black, and crimson red color palette with bold typography, glowing accents, and premium casino-style aesthetics. Enforce this theme consistently across all sections.",
+      "id": "REQ-13",
+      "text": "Replace all link and button click handlers across the entire website so that every clickable element — including navigation links (Home, Sports, Casino, Promotions, About), Login button, Register button, Play Now buttons on game cards, Claim Now buttons on promo cards, footer quick links, footer game links, footer support links, social media icons, hero carousel CTA buttons, and stats bar items — opens the WhatsApp URL 'https://api.whatsapp.com/send?phone=917578900242&text=I%20want%20New%20Reddyanna%20%20Id%20!!!!!!!!!!!!!!' in a new tab. No internal routing or anchor navigation should remain; every interactive link/button must redirect to this WhatsApp URL.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-6"
         ],
         "quotes": [
-          "some more attractive design changes and color theme"
+          "on every link click navigate to open whatsapp link \"https://api.whatsapp.com/send?phone=917578900242&text=I%20want%20New%20Reddyanna%20%20Id%20!!!!!!!!!!!!!!\""
         ]
       },
       "acceptanceCriteria": [
-        "Primary colors are gold (#FFD700), deep black (#0A0A0A), and crimson red (#C0132F)",
-        "Typography is bold and high-contrast throughout",
-        "Glowing neon-style accents are applied to buttons, cards, and section headings",
-        "Theme is consistent across navigation, hero, cards, and footer"
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Build a full-width hero section at the top of the page featuring an auto-playing image carousel/slider with at least 5 banner slides. Each slide should display a promotional banner image, a headline, a subheadline, and a CTA button. Include previous/next navigation arrows and dot indicators.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "add hero section multiple images banner"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Hero section spans full viewport width",
-        "Auto-plays through at least 5 banner images",
-        "Each slide has headline, subheadline, and CTA button",
-        "Navigation arrows and dot indicators are visible and functional",
-        "Transitions are smooth (fade or slide animation)"
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Display a horizontal scrollable sports and games category tab bar below the hero section with icons and labels for categories such as: Cricket, Football, Casino, Slots, Live Casino, Card Games, Lottery. Clicking a tab filters the visible game/sport cards below.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Copy the contents of the website"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Category tabs are horizontally scrollable on smaller screens",
-        "Each tab has an icon and label",
-        "Active tab is visually highlighted in gold",
-        "Selecting a tab filters the game grid accordingly"
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Create a featured games/sports grid section displaying game cards. Each card should show a game banner image, game title, and a 'Play Now' button. Use the AI-generated images as card thumbnails.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Copy the contents of the website",
-          "generate images and use in the website"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Game cards are displayed in a responsive grid (2 cols mobile, 4 cols desktop)",
-        "Each card has a banner image, title, and 'Play Now' CTA",
-        "Cards have hover effects (scale + glow)",
-        "AI-generated images are used as card thumbnails"
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Add a promotional offers/bonuses section with at least 3 offer cards. Each card should show a banner image, offer title (e.g., 'Welcome Bonus 200%', 'Refer a Friend', 'Daily Cashback'), a short description, and a 'Claim Now' button.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Copy the contents of the website"
-        ]
-      },
-      "acceptanceCriteria": [
-        "At least 3 promotional offer cards are displayed",
-        "Each card has an image, title, description, and CTA button",
-        "Cards use the gold/red/black theme with glowing borders"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Render all AI-generated images as static assets from frontend/public/assets/generated and reference them in the hero slider, game cards, and promotional banners.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "generate images and use in the website"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All image <img> tags reference paths under /assets/generated/",
-        "Images load correctly in all sections",
-        "No broken image links"
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "Implement a sticky top navigation bar with the JeetWin Pro logo on the left, navigation links (Home, Sports, Casino, Promotions, About) in the center, and Login / Register buttons on the right. On mobile, collapse nav links into a hamburger menu.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Copy the contents of the website"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Navigation is sticky and visible on scroll",
-        "Logo is on the left",
-        "Login and Register buttons are on the right with distinct styling",
-        "Mobile hamburger menu toggles the nav links"
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "text": "Create a footer section with columns for: Quick Links, Games, Support (Contact Us, FAQ, Responsible Gaming), social media icons, and a legal disclaimer text. Use dark background with gold accent text.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Copy the contents of the website"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Footer has at least 3 link columns",
-        "Social media icons are displayed",
-        "Legal disclaimer text is present",
-        "Footer uses the dark/gold theme"
+        "Clicking any navigation link (Home, Sports, Casino, Promotions, About) opens the WhatsApp URL in a new tab",
+        "Clicking the Login button opens the WhatsApp URL in a new tab",
+        "Clicking the Register button opens the WhatsApp URL in a new tab",
+        "Clicking any Play Now button on game cards opens the WhatsApp URL in a new tab",
+        "Clicking any Claim Now button on promo cards opens the WhatsApp URL in a new tab",
+        "Clicking any footer link (quick links, game links, support links) opens the WhatsApp URL in a new tab",
+        "Clicking any social media icon opens the WhatsApp URL in a new tab",
+        "Clicking hero carousel CTA buttons opens the WhatsApp URL in a new tab",
+        "Clicking stats bar items opens the WhatsApp URL in a new tab",
+        "No internal routing or anchor navigation remains anywhere on the site"
       ]
     }
   ],
   "constraints": [
-    "All images must be served as static assets from frontend/public/assets/generated — do not route images through the backend",
-    "Do not integrate any real payment, login, or gambling backend functionality",
-    "Do not use blue or purple as primary colors — use gold, black, and crimson red"
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
+    "The WhatsApp URL must be exactly: https://api.whatsapp.com/send?phone=917578900242&text=I%20want%20New%20Reddyanna%20%20Id%20!!!!!!!!!!!!!!",
+    "All WhatsApp links must open in a new browser tab"
   ],
   "nonGoals": [
-    "Real user authentication or Internet Identity login",
-    "Actual payment processing or wallet integration",
-    "Live sports data or real-time odds feeds",
-    "Backend game logic or betting engine",
-    "Any third-party API integrations (payment gateways, sports data APIs)"
+    "Backend changes — the backend remains a placeholder with no functionality",
+    "Adding new pages or routes",
+    "Changing the existing color theme or layout structure",
+    "Adding real authentication or user accounts"
   ],
   "imageRequirements": {
-    "required": [
-      "Epic casino hero banner with glowing gold coins, playing cards, dice and luxury dark background atmosphere (hero-banner-1.dim_1920x700.jpg)",
-      "Cricket betting hero banner with cricket stadium lights, golden trophy and dramatic dark sky background (hero-banner-2.dim_1920x700.jpg)",
-      "Live casino roulette hero banner with spinning roulette wheel, elegant red and gold color scheme on dark background (hero-banner-3.dim_1920x700.jpg)",
-      "Football sports betting hero banner with stadium crowd, ball and golden score display on dark cinematic background (hero-banner-4.dim_1920x700.jpg)",
-      "Welcome bonus promotion hero banner with gift boxes, confetti, gold coins exploding on dark luxury background (hero-banner-5.dim_1920x700.jpg)",
-      "Slot machine game card thumbnail with glowing reels, jackpot symbols, gold and red neon glow on black background (game-slots.dim_400x300.jpg)",
-      "Live poker table game card thumbnail with cards, chips, dramatic lighting in dark luxury casino setting (game-poker.dim_400x300.jpg)",
-      "Cricket sports betting card thumbnail with batsman silhouette, stadium lights and golden overlay on dark background (game-cricket.dim_400x300.jpg)",
-      "Football betting card thumbnail with football and stadium in dramatic cinematic lighting with gold accents (game-football.dim_400x300.jpg)",
-      "Baccarat card game thumbnail with cards and chips arranged on a premium dark green felt table with gold trim (game-baccarat.dim_400x300.jpg)",
-      "Lottery game card thumbnail with glowing lottery balls, numbers and golden sparkles on dark background (game-lottery.dim_400x300.jpg)",
-      "Welcome bonus promotional card banner with 200% bonus text, gold coins and luxurious dark red and gold gradient (promo-welcome.dim_600x300.jpg)",
-      "Refer a friend promotional card banner with two silhouettes, handshake icon, gold coins and dark background with red accents (promo-refer.dim_600x300.jpg)",
-      "Daily cashback promotional card banner with gold cashback arrow icon, percentage symbol and dark luxury background (promo-cashback.dim_600x300.jpg)"
-    ],
+    "required": [],
     "edits": []
   }
 }

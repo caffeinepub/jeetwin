@@ -3,9 +3,12 @@ import { ChevronRight } from 'lucide-react';
 import CategoryTabs from './CategoryTabs';
 import GameCard from './GameCard';
 import { games } from '../data/games';
+import { openWhatsApp } from '../constants/whatsapp';
+import { useViewportAnimation } from '../hooks/useViewportAnimation';
 
 export default function FeaturedGames() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const { ref, isVisible } = useViewportAnimation();
 
   const filteredGames = selectedCategory === 'All'
     ? games
@@ -25,16 +28,28 @@ export default function FeaturedGames() {
               </h2>
               <div className="divider-gold w-24 mt-2" />
             </div>
-            <button className="flex items-center gap-1 text-gold-400 text-sm font-display font-semibold tracking-wider uppercase hover:text-gold-300 transition-colors">
+            <button
+              onClick={openWhatsApp}
+              className="flex items-center gap-1 text-gold-400 text-sm font-display font-semibold tracking-wider uppercase hover:text-gold-300 hover:scale-105 transition-all"
+            >
               View All <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
           {/* Games Grid */}
           {filteredGames.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-              {filteredGames.map((game) => (
-                <GameCard key={game.id} game={game} />
+            <div
+              ref={ref as React.RefObject<HTMLDivElement>}
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
+            >
+              {filteredGames.map((game, index) => (
+                <div
+                  key={game.id}
+                  className={`card-enter ${isVisible ? 'visible' : ''}`}
+                  style={{ transitionDelay: `${index * 0.07}s` }}
+                >
+                  <GameCard game={game} />
+                </div>
               ))}
             </div>
           ) : (

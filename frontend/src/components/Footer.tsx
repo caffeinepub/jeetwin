@@ -1,6 +1,7 @@
 import { Trophy, Heart, ExternalLink } from 'lucide-react';
 import { SiFacebook, SiX, SiInstagram, SiYoutube, SiTelegram } from 'react-icons/si';
 import { quickLinks, gameLinks, supportLinks, paymentMethods } from '../data/footer';
+import { openWhatsApp } from '../constants/whatsapp';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,15 +14,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+            <button onClick={openWhatsApp} className="flex items-center gap-2 mb-5 group">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Trophy className="w-5 h-5 text-dark-600" />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-heading text-xl font-bold text-gold-400 tracking-wider">JEET</span>
                 <span className="font-heading text-xs font-semibold text-crimson-500 tracking-[0.2em]">WIN PRO</span>
               </div>
-            </div>
+            </button>
             <p className="text-white/45 text-sm font-body leading-relaxed mb-6">
               India's most trusted online casino and sports betting platform. Play responsibly and win big with JeetWin Pro.
             </p>
@@ -34,14 +35,14 @@ export default function Footer() {
                 { Icon: SiYoutube, label: 'YouTube', color: 'hover:text-red-500' },
                 { Icon: SiTelegram, label: 'Telegram', color: 'hover:text-sky-400' },
               ].map(({ Icon, label, color }) => (
-                <a
+                <button
                   key={label}
-                  href="#"
+                  onClick={openWhatsApp}
                   aria-label={label}
-                  className={`w-9 h-9 rounded-lg bg-dark-300 border border-gold-400/15 flex items-center justify-center text-white/40 ${color} hover:border-gold-400/40 transition-all duration-200`}
+                  className={`w-9 h-9 rounded-lg bg-dark-300 border border-gold-400/15 flex items-center justify-center text-white/40 ${color} hover:border-gold-400/40 hover:scale-110 transition-all duration-200`}
                 >
                   <Icon className="w-4 h-4" />
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -52,13 +53,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <button
+                    onClick={openWhatsApp}
                     className="text-white/45 text-sm font-body hover:text-gold-400 transition-colors duration-200 flex items-center gap-1.5 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-gold-400/40 group-hover:bg-gold-400 transition-colors" />
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -70,13 +71,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {gameLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <button
+                    onClick={openWhatsApp}
                     className="text-white/45 text-sm font-body hover:text-gold-400 transition-colors duration-200 flex items-center gap-1.5 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-gold-400/40 group-hover:bg-gold-400 transition-colors" />
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -88,22 +89,25 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {supportLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <button
+                    onClick={openWhatsApp}
                     className="text-white/45 text-sm font-body hover:text-gold-400 transition-colors duration-200 flex items-center gap-1.5 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-gold-400/40 group-hover:bg-gold-400 transition-colors" />
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
 
             {/* Contact Info */}
-            <div className="mt-6 p-4 rounded-xl bg-dark-400 border border-gold-400/10">
+            <button
+              onClick={openWhatsApp}
+              className="mt-6 p-4 rounded-xl bg-dark-400 border border-gold-400/10 hover:border-gold-400/30 transition-all duration-200 w-full text-left"
+            >
               <p className="text-xs text-white/40 font-body mb-1">24/7 Support</p>
               <p className="text-gold-400 text-sm font-display font-semibold">support@jeetwinpro.com</p>
-            </div>
+            </button>
           </div>
         </div>
 
@@ -112,12 +116,13 @@ export default function Footer() {
           <p className="text-white/30 text-xs font-body uppercase tracking-wider mb-4">Accepted Payment Methods</p>
           <div className="flex flex-wrap gap-2">
             {paymentMethods.map((method) => (
-              <span
+              <button
                 key={method}
-                className="px-3 py-1.5 rounded-lg bg-dark-300 border border-gold-400/10 text-white/40 text-xs font-display font-semibold tracking-wide hover:border-gold-400/30 hover:text-white/60 transition-all cursor-default"
+                onClick={openWhatsApp}
+                className="px-3 py-1.5 rounded-lg bg-dark-300 border border-gold-400/10 text-white/40 text-xs font-display font-semibold tracking-wide hover:border-gold-400/30 hover:text-white/60 hover:scale-105 transition-all"
               >
                 {method}
-              </span>
+              </button>
             ))}
           </div>
         </div>

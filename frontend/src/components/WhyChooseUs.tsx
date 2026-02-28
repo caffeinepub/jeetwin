@@ -1,4 +1,6 @@
 import { Shield, Zap, Headphones, CreditCard, Award, Lock } from 'lucide-react';
+import { openWhatsApp } from '../constants/whatsapp';
+import { useViewportAnimation } from '../hooks/useViewportAnimation';
 
 const features = [
   {
@@ -34,6 +36,8 @@ const features = [
 ];
 
 export default function WhyChooseUs() {
+  const { ref, isVisible } = useViewportAnimation();
+
   return (
     <section id="about" className="bg-dark-600 py-16 border-t border-gold-400/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -47,15 +51,23 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature) => (
-            <div key={feature.title} className="dark-card rounded-xl p-6 group hover:border-gold-400/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center mb-4 group-hover:bg-gold-400/20 transition-colors">
-                <feature.icon className="w-6 h-6 text-gold-400" />
+        <div
+          ref={ref as React.RefObject<HTMLDivElement>}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {features.map((feature, index) => (
+            <button
+              key={feature.title}
+              onClick={openWhatsApp}
+              className={`dark-card rounded-xl p-6 group text-left w-full card-enter ${isVisible ? 'visible' : ''}`}
+              style={{ transitionDelay: `${index * 0.09}s` }}
+            >
+              <div className="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center mb-4 group-hover:bg-gold-400/20 transition-colors duration-300">
+                <feature.icon className="w-6 h-6 text-gold-400 group-hover:scale-110 transition-transform duration-300" />
               </div>
               <h3 className="font-heading text-lg font-bold text-white mb-2">{feature.title}</h3>
               <p className="text-white/50 text-sm font-body leading-relaxed">{feature.description}</p>
-            </div>
+            </button>
           ))}
         </div>
       </div>

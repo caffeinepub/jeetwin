@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Recreate the JeetWin website (https://jeet-win.live/) with improved design, attractive color theme, hero section with multiple image banners, and AI-generated images throughout.",
+  "projectStateVersion": 7,
+  "summary": "Recreate the JeetWin website with improved design, attractive color theme, hero section with multiple image banners, AI-generated images throughout, animations, and all links redirecting to WhatsApp.",
   "architectural_notes": [
     "Reference site: https://jeet-win.live/ — clone content/structure with redesigned visuals",
-    "Use AI-generated images (Google Nano Banana Pro style) for hero banners and site visuals"
+    "Use AI-generated images (Google Nano Banana Pro style) for hero banners and site visuals",
+    "All links (nav, CTA, game cards, promo, footer) open WhatsApp URL: https://api.whatsapp.com/send?phone=917578900242&text=I%20want%20New%20Reddyanna%20%20Id%20!!!!!!!!!!!!!!"
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Epic casino hero banner with glowing gold coins, playing cards, dice and luxury dark background atmosphere (hero-banner-1.dim_1920x700.jpg)\n- Cricket betting hero banner with cricket stadium lights, golden trophy and dramatic dark sky background (hero-banner-2.dim_1920x700.jpg)\n- Live casino roulette hero banner with spinning roulette wheel, elegant red and gold color scheme on dark background (hero-banner-3.dim_1920x700.jpg)\n- Football sports betting hero banner with stadium crowd, ball and golden score display on dark cinematic background (hero-banner-4.dim_1920x700.jpg)\n- Welcome bonus promotion hero banner with gift boxes, confetti, gold coins exploding on dark luxury background (hero-banner-5.dim_1920x700.jpg)\n- Slot machine game card thumbnail with glowing reels, jackpot symbols, gold and red neon glow on black background (game-slots.dim_400x300.jpg)\n- Live poker table game card thumbnail with cards, chips, dramatic lighting in dark luxury casino setting (game-poker.dim_400x300.jpg)\n- Cricket sports betting card thumbnail with batsman silhouette, stadium lights and golden overlay on dark background (game-cricket.dim_400x300.jpg)\n- Football betting card thumbnail with football and stadium in dramatic cinematic lighting with gold accents (game-football.dim_400x300.jpg)\n- Baccarat card game thumbnail with cards and chips arranged on a premium dark green felt table with gold trim (game-baccarat.dim_400x300.jpg)\n- Lottery game card thumbnail with glowing lottery balls, numbers and golden sparkles on dark background (game-lottery.dim_400x300.jpg)\n- Welcome bonus promotional card banner with 200% bonus text, gold coins and luxurious dark red and gold gradient (promo-welcome.dim_600x300.jpg)\n- Refer a friend promotional card banner with two silhouettes, handshake icon, gold coins and dark background with red accents (promo-refer.dim_600x300.jpg)\n- Daily cashback promotional card banner with gold cashback arrow icon, percentage symbol and dark luxury background (promo-cashback.dim_600x300.jpg)",
   "existing_features": [
     {
       "id": "feature-create-a-full-page-layout-that-mirrors-the-structure-of-https-jeet-win-live-including-top-navigation-bar-with-logo-and-login-register-buttons-hero-section-games-sports-categories-section-promotional-banners-section-featured-games-grid-footer-with-links-and-legal-info",
@@ -81,6 +81,24 @@
         "REQ-9"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-entrance-animations-and-micro-interactions-throughout-the-entire-website-this-includes-fade-in-slide-up-animations-for-sections-as-they-enter-the-viewport-hero-stats-bar-featured-games-promotions-why-choose-us-footer-staggered-card-reveal-animations-for-game-cards-and-promo-cards-hover-scale-glow-animations-on-all-interactive-cards-and-buttons-smooth-transitions-on-the-navigation-bar-and-animated-text-overlays-in-the-hero-carousel-slides-use-css-keyframes-and-or-tailwind-animation-utilities-consistently-across-all-components",
+      "title": "Add entrance animations and micro-interactions throughout the entire website. This includes: fade-in/slide-up animations for sections as they enter the viewport (hero, stats bar, featured games, promotions, why choose us, footer), staggered card reveal animations for game cards and promo cards, hover scale/glow animations on all interactive cards and buttons, smooth transitions on the navigation bar, and animated text overlays in the hero carousel slides. Use CSS keyframes and/or Tailwind animation utilities consistently across all components.",
+      "reqIds": [
+        "REQ-10",
+        "REQ-12"
+      ],
+      "version": 2
+    },
+    {
+      "id": "feature-replace-all-link-and-button-click-handlers-across-the-entire-website-so-that-every-clickable-element-including-navigation-links-home-sports-casino-promotions-about-login-button-register-button-play-now-buttons-on-game-cards-claim-now-buttons-on-promo-cards-footer-quick-links-footer-game-links-footer-support-links-social-media-icons-hero-carousel-cta-buttons-and-stats-bar-items-opens-the-whatsapp-url-https-api-whatsapp-com-send-phone-917578900242-text-i-20want-20new-20reddyanna-20-20id-20-in-a-new-tab-no-internal-routing-or-anchor-navigation-should-remain-every-interactive-link-button-must-redirect-to-this-whatsapp-url",
+      "title": "Replace all link and button click handlers across the entire website so that every clickable element — including navigation links (Home, Sports, Casino, Promotions, About), Login button, Register button, Play Now buttons on game cards, Claim Now buttons on promo cards, footer quick links, footer game links, footer support links, social media icons, hero carousel CTA buttons, and stats bar items — opens the WhatsApp URL 'https://api.whatsapp.com/send?phone=917578900242&text=I%20want%20New%20Reddyanna%20%20Id%20!!!!!!!!!!!!!!' in a new tab. No internal routing or anchor navigation should remain; every interactive link/button must redirect to this WhatsApp URL.",
+      "reqIds": [
+        "REQ-11",
+        "REQ-13"
+      ],
+      "version": 2
     }
   ],
   "new_feature_requests": [
@@ -99,6 +117,18 @@
     {
       "id": "AR-3",
       "summary": "Generate and integrate AI images throughout the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add animations throughout the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "All link clicks navigate to WhatsApp URL: https://api.whatsapp.com/send?phone=917578900242&text=I%20want%20New%20Reddyanna%20%20Id%20!!!!!!!!!!!!!!",
       "reqIds": [],
       "status": "pending"
     }

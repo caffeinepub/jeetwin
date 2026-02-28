@@ -1,16 +1,15 @@
 # Specification
 
 ## Summary
-**Goal:** Build a visually rich, single-page frontend for JeetWin Pro — a premium casino/sports betting landing page — with a gold, black, and crimson red theme, hero banner carousel, game grid, promotions section, and footer.
+**Goal:** Add entrance/hover animations throughout the entire JeetWin Pro website and redirect every clickable element to a WhatsApp URL in a new tab.
 
 **Planned changes:**
-- Sticky top navigation bar with JeetWin Pro logo (left), nav links (center: Home, Sports, Casino, Promotions, About), and Login/Register buttons (right); collapses to hamburger menu on mobile
-- Full-width hero section with auto-playing carousel of 5 banner slides, each with headline, subheadline, CTA button, prev/next arrows, and dot indicators
-- Horizontal scrollable category tab bar (Cricket, Football, Casino, Slots, Live Casino, Card Games, Lottery) with icons; active tab highlighted in gold; filters the game grid below
-- Responsive featured games grid (2 cols mobile / 4 cols desktop) with game cards showing banner image, title, and "Play Now" button; cards have hover scale + glow effects
-- Promotional offers section with 3 cards (Welcome Bonus 200%, Refer a Friend, Daily Cashback), each showing banner image, title, description, and "Claim Now" button
-- Footer with Quick Links, Games, and Support columns, social media icons, legal disclaimer text; dark background with gold accent text
-- Gold (#FFD700), deep black (#0A0A0A), and crimson red (#C0132F) color palette applied consistently with bold typography and neon/glow accents throughout
-- All images served as static assets from `/assets/generated/`
+- Add fade-in/slide-up viewport entrance animations to all major sections (hero, stats bar, featured games, promotions, why choose us, footer)
+- Add staggered card reveal animations for game cards and promo cards on load
+- Add hover scale and glow effects on all interactive cards and buttons
+- Add smooth transition effects to the navigation bar
+- Add animated text overlays to hero carousel slides
+- Replace all link and button click handlers site-wide (navigation links, Login, Register, Play Now, Claim Now, footer links, social media icons, hero CTA buttons, stats bar items) to open `https://api.whatsapp.com/send?phone=917578900242&text=I%20want%20New%20Reddyanna%20%20Id%20!!!!!!!!!!!!!!` in a new tab
+- Remove all internal routing and anchor navigation
 
-**User-visible outcome:** Users see a polished, casino-style landing page with an animated hero banner, browsable game categories, featured game cards, promotional offers, and a complete footer — all in a premium gold/black/red theme.
+**User-visible outcome:** Every section of the site animates smoothly as users scroll and interact, and clicking any button or link on the site opens the specified WhatsApp chat in a new browser tab.

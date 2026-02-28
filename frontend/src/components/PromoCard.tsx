@@ -1,13 +1,19 @@
 import { ArrowRight, Tag } from 'lucide-react';
 import type { Promotion } from '../data/promotions';
+import { openWhatsApp } from '../constants/whatsapp';
 
 interface PromoCardProps {
   promo: Promotion;
+  animationDelay?: number;
 }
 
-export default function PromoCard({ promo }: PromoCardProps) {
+export default function PromoCard({ promo, animationDelay = 0 }: PromoCardProps) {
   return (
-    <div className="promo-card rounded-2xl overflow-hidden group">
+    <div
+      className="promo-card rounded-2xl overflow-hidden group cursor-pointer"
+      style={{ transitionDelay: `${animationDelay}ms` }}
+      onClick={openWhatsApp}
+    >
       {/* Image */}
       <div className="relative h-44 overflow-hidden">
         <img
@@ -42,9 +48,12 @@ export default function PromoCard({ promo }: PromoCardProps) {
         <p className="font-display font-semibold text-white/80 text-sm mb-3 tracking-wide">{promo.subtitle}</p>
         <p className="text-white/55 text-sm font-body leading-relaxed mb-5">{promo.description}</p>
 
-        <button className="btn-crimson w-full py-3 rounded-lg text-sm flex items-center justify-center gap-2 group-hover:shadow-crimson-md">
-          {promo.ctaText}
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        <button
+          onClick={(e) => { e.stopPropagation(); openWhatsApp(); }}
+          className="btn-crimson w-full py-3 rounded-xl text-sm flex items-center justify-center gap-2"
+        >
+          Claim Now
+          <ArrowRight className="w-4 h-4" />
         </button>
       </div>
     </div>

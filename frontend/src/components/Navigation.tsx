@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Trophy, ChevronDown } from 'lucide-react';
+import { Menu, X, Trophy } from 'lucide-react';
 import { useMobileMenu } from '../hooks/useMobileMenu';
+import { openWhatsApp } from '../constants/whatsapp';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Sports', href: '#categories' },
-  { label: 'Casino', href: '#games' },
-  { label: 'Promotions', href: '#promotions' },
-  { label: 'About', href: '#about' },
+  { label: 'Home' },
+  { label: 'Sports' },
+  { label: 'Casino' },
+  { label: 'Promotions' },
+  { label: 'About' },
 ];
 
 export default function Navigation() {
@@ -23,17 +24,16 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (label: string, href: string) => {
+  const handleNavClick = (label: string) => {
     setActiveLink(label);
     close();
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    openWhatsApp();
   };
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? 'bg-dark-600/98 backdrop-blur-md shadow-lg border-b border-gold-400/20'
             : 'bg-gradient-to-b from-dark-600/90 to-transparent'
@@ -42,22 +42,25 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2 group" onClick={() => handleNavClick('Home', '#home')}>
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shadow-gold-sm group-hover:shadow-gold-md transition-all">
+            <button
+              onClick={openWhatsApp}
+              className="flex items-center gap-2 group"
+            >
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center shadow-gold-sm group-hover:shadow-gold-md transition-all duration-300 group-hover:scale-110">
                 <Trophy className="w-5 h-5 text-dark-600" />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-heading text-xl font-bold text-gold-400 tracking-wider">JEET</span>
+                <span className="font-heading text-xl font-bold logo-shimmer tracking-wider">JEET</span>
                 <span className="font-heading text-xs font-semibold text-crimson-500 tracking-[0.2em]">WIN PRO</span>
               </div>
-            </a>
+            </button>
 
             {/* Desktop Nav Links */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
-                  onClick={() => handleNavClick(link.label, link.href)}
+                  onClick={() => handleNavClick(link.label)}
                   className={`nav-link text-sm ${activeLink === link.label ? 'active' : ''}`}
                 >
                   {link.label}
@@ -67,10 +70,16 @@ export default function Navigation() {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-3">
-              <button className="px-5 py-2 rounded text-sm font-display font-semibold tracking-wider uppercase text-gold-400 border border-gold-400/40 hover:border-gold-400 hover:bg-gold-400/10 transition-all duration-200">
+              <button
+                onClick={openWhatsApp}
+                className="px-5 py-2 rounded text-sm font-display font-semibold tracking-wider uppercase text-gold-400 border border-gold-400/40 hover:border-gold-400 hover:bg-gold-400/10 hover:scale-105 transition-all duration-200"
+              >
                 Login
               </button>
-              <button className="btn-gold px-5 py-2 rounded text-sm">
+              <button
+                onClick={openWhatsApp}
+                className="btn-gold px-5 py-2 rounded text-sm"
+              >
                 Register
               </button>
             </div>
@@ -113,12 +122,12 @@ export default function Navigation() {
       {isOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div className="absolute inset-0 bg-dark-600/95 backdrop-blur-md" onClick={close} />
-          <nav className="absolute top-16 left-0 right-0 bg-dark-400 border-b border-gold-400/20 shadow-xl">
+          <nav className="absolute top-16 left-0 right-0 bg-dark-400 border-b border-gold-400/20 shadow-xl animate-slide-in-up">
             <div className="px-4 py-6 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
-                  onClick={() => handleNavClick(link.label, link.href)}
+                  onClick={() => handleNavClick(link.label)}
                   className={`text-left px-4 py-3 rounded-lg font-display font-semibold text-base tracking-wider uppercase transition-all ${
                     activeLink === link.label
                       ? 'text-gold-400 bg-gold-400/10'
@@ -129,10 +138,16 @@ export default function Navigation() {
                 </button>
               ))}
               <div className="mt-4 flex flex-col gap-3 pt-4 border-t border-gold-400/20">
-                <button className="w-full py-3 rounded text-sm font-display font-semibold tracking-wider uppercase text-gold-400 border border-gold-400/40 hover:border-gold-400 hover:bg-gold-400/10 transition-all">
+                <button
+                  onClick={openWhatsApp}
+                  className="w-full py-3 rounded text-sm font-display font-semibold tracking-wider uppercase text-gold-400 border border-gold-400/40 hover:border-gold-400 hover:bg-gold-400/10 transition-all"
+                >
                   Login
                 </button>
-                <button className="btn-gold w-full py-3 rounded text-sm">
+                <button
+                  onClick={openWhatsApp}
+                  className="btn-gold w-full py-3 rounded text-sm"
+                >
                   Register Now
                 </button>
               </div>

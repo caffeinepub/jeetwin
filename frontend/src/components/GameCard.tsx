@@ -1,13 +1,19 @@
 import { Play, Star, Flame } from 'lucide-react';
 import type { Game } from '../data/games';
+import { openWhatsApp } from '../constants/whatsapp';
 
 interface GameCardProps {
   game: Game;
+  animationDelay?: number;
 }
 
-export default function GameCard({ game }: GameCardProps) {
+export default function GameCard({ game, animationDelay = 0 }: GameCardProps) {
   return (
-    <div className="game-card rounded-xl overflow-hidden group">
+    <div
+      className="game-card rounded-xl overflow-hidden group"
+      style={{ transitionDelay: `${animationDelay}ms` }}
+      onClick={openWhatsApp}
+    >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
@@ -18,9 +24,9 @@ export default function GameCard({ game }: GameCardProps) {
         />
         {/* Overlay on hover */}
         <div className="play-overlay absolute inset-0 flex items-center justify-center">
-          <button className="btn-gold w-12 h-12 rounded-full flex items-center justify-center shadow-gold-md">
+          <div className="btn-gold w-12 h-12 rounded-full flex items-center justify-center shadow-gold-md">
             <Play className="w-5 h-5 fill-current ml-0.5" />
-          </button>
+          </div>
         </div>
         {/* Badge */}
         {game.badge && (
@@ -61,7 +67,10 @@ export default function GameCard({ game }: GameCardProps) {
               <Star key={i} className={`w-3 h-3 ${i < 4 ? 'text-gold-400 fill-gold-400' : 'text-white/20'}`} />
             ))}
           </div>
-          <button className="btn-gold px-3 py-1.5 rounded text-xs">
+          <button
+            onClick={(e) => { e.stopPropagation(); openWhatsApp(); }}
+            className="btn-gold px-3 py-1.5 rounded text-xs"
+          >
             Play Now
           </button>
         </div>
